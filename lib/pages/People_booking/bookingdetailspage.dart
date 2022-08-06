@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:swoon/colors/colours_list.dart';
 import 'package:swoon/controllers/people_controller.dart';
 
@@ -297,7 +296,7 @@ class HeartButton extends StatelessWidget {
               print("heel");
             },
             child: Icon(
-              MdiIcons.plusOutline,
+              Icons.tab_outlined,
               color: textturq3,
             ),
           ),
