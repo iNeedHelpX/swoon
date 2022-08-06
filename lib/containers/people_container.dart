@@ -39,6 +39,8 @@ class PeopleContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(() => PeopleDetails(
+              area: productController.products[index].area,
+              price: productController.products[index].price,
               image: productController.products[index].image,
               name: productController.products[index].name,
             ));

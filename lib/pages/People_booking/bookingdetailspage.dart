@@ -3,6 +3,7 @@ import 'package:flutter_gradients_reborn/flutter_gradients_reborn.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swoon/colors/colours_list.dart';
+import 'package:swoon/containers/infobox2.dart';
 import 'package:swoon/controllers/people_controller.dart';
 
 //this will be the page that shows the details of booking a person to wait in line up for you
@@ -14,14 +15,14 @@ class PeopleDetails extends StatelessWidget {
   final String name;
   final int? price;
   final String image;
-  final String? area;
+  final String area;
 
   PeopleDetails({
     Key? key,
     required this.name,
-    this.price,
+    required this.price,
     required this.image,
-    this.area,
+    required this.area,
 
     // required this.rank,
   }) : super(key: key);
@@ -71,7 +72,7 @@ class PeopleDetails extends StatelessWidget {
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
-            height: MediaQuery.of(context).size.height * 0.5,
+            height: MediaQuery.of(context).size.height * .66,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
               gradient: FlutterGradients.gentleCare(tileMode: TileMode.clamp),
@@ -100,7 +101,7 @@ class PeopleDetails extends StatelessWidget {
                   child: Row(
                     children: [
                       Text(
-                        "IDR 25,000.00",
+                        "\$ ${price}",
                         style: GoogleFonts.mako(
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
@@ -108,7 +109,7 @@ class PeopleDetails extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "/ 1kg",
+                        "/ hr. min 5 hr booking",
                         style: GoogleFonts.mako(fontSize: 14),
                       ),
                     ],
@@ -123,7 +124,7 @@ class PeopleDetails extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Text(
-                      "Shipped to the door",
+                      area,
                       style: GoogleFonts.mali(
                         fontSize: 22,
                         fontWeight: FontWeight.w700,
@@ -209,7 +210,7 @@ class PeopleDetails extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "IDR 25,000.00",
+                            "\$ ${price! * 5}",
                             style: GoogleFonts.mako(
                               fontSize: 20,
                               fontWeight: FontWeight.w700,
@@ -243,7 +244,7 @@ class PeopleDetails extends StatelessWidget {
                       ),
                     )
                   ]),
-                )
+                ),
               ],
             ),
           ),
