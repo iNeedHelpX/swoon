@@ -39,8 +39,8 @@ class PeopleContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Get.to(() => PeopleDetails(
-              image: '',
-              name: '',
+              image: productController.products[index].image,
+              name: productController.products[index].name,
             ));
         //nav over to the details page.
         //Navigator.of(context).pushNamed('/details', arguments: widget.imgurl);
