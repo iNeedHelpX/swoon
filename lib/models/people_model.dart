@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class PeopleModel {
   final String name;
   final int price;
+
   final String image;
   final String area;
 

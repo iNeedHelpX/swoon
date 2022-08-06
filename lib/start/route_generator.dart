@@ -11,17 +11,19 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed. this allows me to get the arguments as dynamic data. Esssentially pass in the arguments
     final args = settings.arguments;
+    final arg = settings.arguments;
+
     // final index = settings.arguments as int;
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => HomePage());
       case '/details':
         // Validation of correct data type. I can add different data types here
-        if (args is String) {
+        if (args is String && arg is int) {
           return MaterialPageRoute(
               builder: (_) => ProductDetails(
                     image: args,
-                    price: args,
+                    price: arg,
                   ));
         }
         // If args is not of the correct type, return an error page.
