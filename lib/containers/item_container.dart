@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:swoon/colors/colours_list.dart';
 import 'package:swoon/controllers/item_controller.dart';
+import 'package:swoon/models/product_model.dart';
+import 'package:swoon/pages/product_detail.dart';
 
 class CatalogProducts extends StatelessWidget {
   CatalogProducts({Key? key}) : super(key: key);
@@ -27,15 +29,23 @@ class CatalogProducts extends StatelessWidget {
 }
 
 class ItemContainer extends StatelessWidget {
-  ItemContainer({Key? key, required this.index}) : super(key: key);
+  final ItemController itemController = Get.find();
+
+  final ProductModel? prod;
+  ItemContainer({Key? key, required this.index, this.prod}) : super(key: key);
 
   final int index;
-  final ItemController itemController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Get.to(() => ProductDetails(
+              image: itemController.products[index].image,
+              name: itemController.products[index].name,
+              info: itemController.products[index].info,
+              price: itemController.products[index].price,
+            ));
         // Get.toNamed("/details", arguments: widget.imgurl);
         //nav over to the details page.
       },
