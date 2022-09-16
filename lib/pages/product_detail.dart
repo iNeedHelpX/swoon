@@ -7,14 +7,14 @@ import 'package:swoon/containers/neuromorphicwarn.dart';
 class ProductDetails extends StatelessWidget {
   // final itemsController = Get.put(ItemController());
   final String? name;
-  final int price;
+  final int? price;
   final String image;
   final String? info;
 
   ProductDetails({
     Key? key,
     this.name,
-    required this.price,
+    this.price,
     required this.image,
     this.info,
   }) : super(key: key);

@@ -40,12 +40,13 @@ class ItemContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => ProductDetails(
-              image: itemController.products[index].image,
-              name: itemController.products[index].name,
-              info: itemController.products[index].info,
-              price: itemController.products[index].price,
-            ));
+        Get.to(
+          () => ProductDetails(
+            image: itemController.products[index].image,
+            name: itemController.products[index].name,
+            info: itemController.products[index].info,
+          ),
+        );
         // Get.toNamed("/details", arguments: widget.imgurl);
         //nav over to the details page.
       },

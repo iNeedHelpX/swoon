@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:swoon/colors/colours_list.dart';
 import 'package:swoon/controllers/people_controller.dart';
 import 'package:swoon/pages/People_booking/bookingdetailspage.dart';
+import 'package:swoon/pages/People_booking/second_detailspage.dart';
 
 //Get a list of all people in firebase db and present it in a decorated container. This is how you get the list
 class PeopleList extends StatelessWidget {
@@ -38,12 +39,18 @@ class PeopleContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Get.to(() => PeopleDetails(
-              area: productController.products[index].area,
-              price: productController.products[index].price,
-              image: productController.products[index].image,
-              name: productController.products[index].name,
-            ));
+        Get.to(() => DetailsPeople(
+                  area: productController.products[index].area,
+                  image: productController.products[index].image,
+                  name: productController.products[index].name,
+                )
+            // () => PeopleDetails(
+            //   area: productController.products[index].area,
+            //   price: productController.products[index].price,
+            //   image: productController.products[index].image,
+            //   name: productController.products[index].name,
+            // ),
+            );
         //nav over to the details page.
         //Navigator.of(context).pushNamed('/details', arguments: widget.imgurl);
       },
